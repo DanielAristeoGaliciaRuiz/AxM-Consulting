@@ -4,6 +4,10 @@
   padding: 0;
   box-sizing: border-box;
 }
+html {
+  scroll-behavior: smooth;
+}
+
 
 body {
   font-family: 'Segoe UI', sans-serif;
@@ -84,6 +88,41 @@ body {
   margin: 0 1rem;
   text-decoration: none;
   transition: color 0.3s;
+}
+
+.menu a::before,
+.menu a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: .5px;
+  background: #A6A6A6;
+  transition: all 0.5s;
+}
+
+.menu a::before {
+  top: 0;
+  left: 0;
+}
+
+.menu a::after {
+  bottom: 0;
+  right: 0;
+}
+
+.menu a:hover::before {
+  width: 100%;
+  transition: width 0.25s ease-in-out;
+}
+
+.menu a:hover::after {
+  width: 100%;
+  transition: width 0.25s ease-in-out 0.25s;
+}
+
+.menu a:hover {
+  color: rgb(241, 51, 51);
+  transition: ease 0.5s;
 }
 
 .btn-cta {
@@ -187,14 +226,13 @@ body {
 .servicios-section h2 {
   font-size: 2.5rem;
   color: #1B65E0;
-  margin-bottom: 4rem; /* separa el título del grid */
+  margin-bottom: 0rem; /* separa el título del grid */
   font-weight: 700;
 }
 .servicios-grid {
   display: grid;
  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  padding: 4rem 2rem;
+  gap: 1.5rem;
   max-width: 1200px;
   margin: auto;
 }
@@ -205,7 +243,7 @@ body {
   color: white;
   border-radius: 5px;
   padding: 2rem 1.5rem 5rem; /* espacio abajo para el botón */
-  margin-top:150px;
+  margin-top:90px;
    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
   overflow: hidden;
   transition: transform 0.3s ease;
@@ -475,7 +513,6 @@ body {
 
 /*Contacto*/
 
-
 .footer {
   background-color: #0c0c0c;
   color: white;
@@ -484,14 +521,14 @@ body {
 }
 
 .footer-container {
-  max-width: 1100px;
+  max-width: 1050px;
   margin: 0 auto;
 }
 
 .footer-contacto {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-between;
   gap: 2rem;
   border: 1px solid #333;
   padding: 1.5rem;
@@ -517,12 +554,17 @@ body {
   list-style: none;
   padding: 0;
   margin: 0;
+  margin-bottom: 100px;
 }
 
 .footer-servicios li {
   border-bottom: 1px solid #333;
   padding: 1rem 0;
   width: 500px;
+}
+.footer-servicios li :hover {
+  color: rgb(241, 51, 51);
+  transition: ease 0.5s;
 }
 
 .footer-servicios a {
@@ -532,10 +574,10 @@ body {
   font-size: 2.5rem;
 }
 
-.footer-legal h4 {
-  color: #aaa;
-  font-size: 1rem;
-  margin-bottom: 0.5rem;
+.footer-legal {
+  color: white;
+  width: 300px;
+  text-decoration: none;
 }
 
 .footer-legal a {
@@ -548,5 +590,6 @@ body {
   font-size: 0.9rem;
   color: #ff0033;
   margin-top: 2rem;
+  margin-bottom: 30px;
 }
 

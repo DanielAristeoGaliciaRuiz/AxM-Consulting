@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AxM Consulting</title>
+  <link rel="stylesheet" href="/css/cursos.css" />
+    <link rel="icon" href="/img/Axm_converted.png" type="image/png">
+</head>
+<body>
+
+  <!-- Navbar -->
+      <header class="navbar">
+    <div class="navbar-container">
+      <div href="/index.html" class="logo" >
+        <a href="/index.html"><img  src="/img/Axm_converted.png" alt="logo" ></a>
+    </div>
+      <nav class="menu">
+        <a href="/index.html">Inicio</a>
+        <a href="#">Nosotros</a>
+        <a href="/contacto.html">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="content-container">
+    <div class="image">
+         <h2>Business Intelligence</h2>
+      <h3>Diseñamos la inteligencia visual que tu empresa necesita para decidir mejor</h3>
+      <img src="/img/pexels-goumbik-669612.jpg" alt="Data Strategy">
+    </div>
+    <div class="text">
+           <p>
+        Un dashboard no debería ser solo una colección de gráficos; debe convertirse en una herramienta estratégica que facilite decisiones claras y oportunas.
+
+En lugar de invertir tiempo y recursos en reportes que apenas se consultan, ayudamos a construir tableros interactivos, intuitivos y alineados con tus objetivos de negocio. Nuestro enfoque es crear soluciones que realmente agreguen valor desde el primer clic.
+
+Invertir en dashboards inteligentes significa acceder a herramientas que:
+        <br><br>
+        <ul>
+            <li>Convierten datos en decisiones: identifican oportunidades, reducen riesgos y mejoran procesos.</li>
+            <li>Traducen la estrategia en visualizaciones: muestran lo que importa para tu negocio, en el momento adecuado.</li>
+            <li>Impulsan una cultura analítica: fomentan el uso continuo de los datos como motor de mejora.</li>
+        </ul>
+        </p>
+    </div>
+  </div>
+  
+
+
+<footer class="footer">
+      <div class="footer-container">
+  <div class="footer-contacto">
+    <div>Mail: <a href="mailto:contacto@data360.mx">contacto@data360.mx</a></div>
+    <div>Teléfono: <a href="tel:+525511417123">(52) 55 1141 7123</a></div>
+  </div>
+
+  <div class="footer-main">
+    <div class="footer-servicios">
+      <ul>
+        <li><a href="/cursos/bI.html" target="_blank">Business Intelligence</a></li>
+        <li><a href="/cursos/dataEngineering.html" target="_blank">Data Engineering</a></li>
+        <li><a href="/cursos/dataStrategy.html" target="_blank">Data Strategy</a></li>
+        <li><a href="/cursos/training.html" target="_blank">Trainings</a></li>
+      </ul>
+    </div>
+    <div class="footer-legal">
+      <a href="#">Aviso de Privacidad</a>
+    </div>
+  </div>
+
+  <div class="footer-copy">
+    <span>2023 - 2025 • Derechos Reservados</span>
+  </div>
+  </div>
+</footer>
+
+
+
+
+
+<script>
+  window.addEventListener("scroll", function () {
+    const navbar = document.querySelector(".navbar");
+    if (window.scrollY > 50) {
+      navbar.classList.remove("transparent");
+      navbar.classList.add("scrolled");
+    } else {
+      navbar.classList.remove("scrolled");
+      navbar.classList.add("transparent");
+    }
+  });
+
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const navbar = document.querySelector(".navbar");
+    navbar.classList.add("transparent");
+  });
+</script>
+
+</body>
+</html>
