@@ -6,6 +6,7 @@
 }
 html {
   scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 
@@ -13,6 +14,8 @@ body {
   font-family: 'Segoe UI', sans-serif;
   color: #111;
   background: #fff;
+  overflow-x: hidden;
+
 }
 
 /* Navbar */
@@ -53,8 +56,16 @@ body {
 }
 
 .navbar.transparent .logo,
-.navbar.transparent .menu a,
+.navbar.transparent,
 .navbar.transparent .btn-cta {
+  color: white;
+}
+
+.menu >a{
+  color: white;
+}
+
+.menu>.dropdown >a{
   color: white;
 }
 
@@ -68,7 +79,7 @@ body {
 .navbar.scrolled .logo{
   margin-top: 0px;
 }
-.navbar.scrolled .menu a,
+.navbar.scrolled .menu >a,
 .navbar.scrolled .btn-cta {
   color: white;
   margin-top: 25px;
@@ -124,6 +135,61 @@ body {
   color: rgb(241, 51, 51);
   transition: ease 0.5s;
 }
+/* 
+/* Estilos menus desplegables*/
+/* Estilos para dropdown */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-toggle {
+  cursor: pointer;
+  position: relative;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  max-width: 180px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+  flex-direction: column;
+}
+
+.dropdown-option{
+  color: #d72d2d;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 10px 0px;
+  text-decoration: none;
+  white-space: nowrap;
+  color: black !important; 
+    font-size: 16px;           /* ajusta según tu menú */
+  font-weight: 500;  
+  transition: background-color 0.3s;
+  border-bottom: 1px solid #ddd; /* línea sutil abajo */
+}
+
+.dropdown-menu a:last-child {
+  border-bottom: none; /* evita línea en el último ítem */
+}
+
+.dropdown-menu a:hover {
+  /* background-color: #f1f1f1; */
+  color: rgb(241, 51, 51);
+}
+
+/* Mostrar menú al hacer hover */
+.dropdown:hover .dropdown-menu {
+  display: block;
+} */
+
 
 .btn-cta {
   padding: 0.5rem 1.2rem;
@@ -144,7 +210,7 @@ body {
 /* Hero Section */
 .hero-video {
   position: relative;
-  width: 100%;
+  width: 100;
   height: 100vh; /* Ocupa toda la altura del viewport */
   overflow: hidden;
 }
@@ -225,8 +291,7 @@ body {
 
 .servicios-section h2 {
   font-size: 2.5rem;
-  color: #1B65E0;
-  margin-bottom: 0rem; /* separa el título del grid */
+  color: #1B65E0;/* separa el título del grid */
   font-weight: 700;
 }
 .servicios-grid {
@@ -242,13 +307,16 @@ body {
   background: #111;
   color: white;
   border-radius: 5px;
-  padding: 2rem 1.5rem 5rem; /* espacio abajo para el botón */
+  padding: 4rem 1.5rem 5rem; /* espacio abajo para el botón */
   margin-top:90px;
-   box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
   overflow: hidden;
   transition: transform 0.3s ease;
   height: 550px;
-  width: 380px;
+  width: 100%;
+  max-width: 380px; /* lo mantiene legible en desktop */
+  margin: auto; 
+  margin-top: 60px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -431,7 +499,7 @@ body {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  max-width: 1200px;
+  max-width: 100vw;
   margin: auto;
   gap: 3rem;
   background-color: #1a1a1a;
@@ -591,5 +659,258 @@ body {
   color: #ff0033;
   margin-top: 2rem;
   margin-bottom: 30px;
+}
+
+/* ===== VISTA TABLET (768px - 1024px) ===== */
+@media screen and (max-width: 1024px) {
+  /* Hero */
+  .hero-container {
+    margin-left: 2rem;
+    max-width: 90%;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-container h1 {
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+  }
+
+  .hero-container p {
+    font-size: 1rem;
+        margin-bottom: 50px;
+  }
+
+  /* Servicios */
+  .servicios-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .servicio-card {
+    width: 100%;
+    height: auto;
+    padding-bottom: 6rem;
+  }
+
+  .icono-container {
+    width: 100%;
+    height: auto;
+    justify-content: center;
+  }
+
+  .servicio-icono {
+    width: 80px;
+  }
+
+  /* Métricas */
+  .metricas-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .metrica-card {
+    width: 100%;
+  }
+
+  /* Casos de éxito */
+  .contenedor-caso {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem;
+    width: 80%;
+  }
+
+  .imagen-caso img {
+    width: 90%;
+    max-width: 400px;
+  }
+
+  .texto-caso {
+    width: 90%;
+  }
+
+  /* Footer */
+  .footer-contacto,
+  .footer-main {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-servicios li {
+    width: auto;
+  }
+
+  .footer-copy {
+    text-align: center;
+  }
+}
+
+
+@media screen and (max-width: 1132px) {
+.metricas-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3.5rem;
+  }
+
+  .metrica-card {
+    width: 100%;
+  }
+
+}
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: white;
+}
+
+/* Estilos para responsive */
+@media screen and (max-width: 800px) {
+ .navbar,
+  .navbar.transparent {
+    background-color: #000 !important;
+  }
+
+.navbar{
+  height: 100px;
+}
+
+.logo{
+  margin-top:5px;
+}
+  .hamburger {
+    display: block;
+  }
+
+ .menu {
+  display: none;
+  flex-direction: column;
+  background-color: #f9f9f9;
+  position: fixed;
+  top: 50px; /* asegúrate que tu navbar tenga height: 100px */
+  right: 0;
+  left: 0;  /* que ocupe todo el ancho */
+  width: 100%;
+  text-align: center;
+  padding: 1rem 0;
+  z-index: 999;
+}
+  .menu a {
+    margin: 1rem;
+    padding-bottom: 10px;
+    display: block;
+    color: #000;
+    border-bottom: 1px solid #eee;
+  }
+
+  .menu.active {
+    display: flex;
+  }
+
+  .dropdown-menu {
+    position: relative;
+    top: auto;
+    left: auto;
+    background-color: #111;
+  }
+
+  .dropdown:hover .dropdown-menu {
+    display: none; /* desactivamos hover */
+  }
+
+  .dropdown-toggle::after {
+    content: " ▼";
+  }
+  .dropdown a{
+    color: #000;
+  }
+
+  .dropdown-toggle.active + .dropdown-menu {
+    display: block;
+  }
+
+  .dropdown-menu {
+  left: 0;
+  background-color: #f9f9f9;
+  max-width: 100vw;
+}
+.dropdown-menu a {
+     margin: 1rem;
+    padding-bottom: 10px;
+    display: block;
+    color: #000;
+    border-bottom: 1px solid #eee;
+}
+.menu>.dropdown >a{
+  color: black;
+}
+}
+
+@media screen and (max-width: 700px) {
+.hero-container {
+    max-width: 80%;
+    margin:0 auto;
+    margin-top: 30px;
+  }
+    .hero-container h1{
+    margin-bottom: 25px;
+  }
+  .hero-container p{
+    margin-bottom: 25px;
+  }
+
+
+  /* Servicios */
+  .servicios-grid {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1rem;
+  }
+
+  .servicio-card {
+  height: 400px;
+  width: 100%;
+}
+
+  .icono-container {
+    width: 100%;
+    height: auto;
+    justify-content: center;
+  }
+
+  .servicio-icono {
+    width: 80px;
+  }
+
+  /* Métricas */
+  .metricas-grid {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1.5rem;
+  }
+
+  .metrica-card {
+    width: 100%;
+  }
+
+  /* Casos de éxito */
+  .contenedor-caso {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem;
+    width: 100%;
+  }
+
+  .imagen-caso img {
+    width: 90%;
+    max-width: 400px;
+  }
+
+  .texto-caso {
+    width: 100%;
+  }
+
 }
 

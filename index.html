@@ -10,19 +10,33 @@
 <body>
 
   <!-- Navbar -->
-  <header class="navbar">
-    <div class="navbar-container">
-      <div href="/" class="logo">
-       <a href="#"><img  src="/img/Axm_converted.png" alt="logo" ></a>
+ <header class="navbar">
+  <div class="navbar-container">
+    <div class="logo">
+      <a href="/"><img src="/img/Axm_converted.png" alt="logo"></a>
     </div>
-      <nav class="menu">
-        <a href="#">Inicio</a>
-        <a href="#servicios">Servicios</a>
-        <a href="#">Nosotros</a>
-        <a href="/contacto.html">Contacto</a>
-      </nav>
-    </div>
-  </header>
+    <div class="hamburger" id="hamburger">
+  ☰
+</div>
+    <nav class="menu">
+      <a href="#">Inicio</a>
+
+      <div class="dropdown">
+        <a href="#servicios" class="dropdown-toggle">Servicios</a>
+        <div class="dropdown-menu">
+          <a href="#" class="dropdown-option">Trainings</a>
+          <a href="#" class="dropdown-option">Data Engineering</a>
+          <a href="#" class="dropdown-option">Data Strategy</a>
+          <a href="#" class="dropdown-option">Business Intelligence</a>
+
+        </div>
+      </div>
+
+      <a href="#">Nosotros</a>
+      <a href="/contacto.html">Contacto</a>
+    </nav>
+  </div>
+</header>
 
   <!-- Hero Section -->
   <section class="hero-video">
@@ -52,7 +66,7 @@
     </div>
     <h3>Business Intelligence</h3>
     <p>Diseñamos dashboards interactivos y personalizados que transforman tus datos en narrativas visuales poderosas</p>
-    <a href="#" class="btn-mas">Conocer más</a>
+    <a href="/cursos/bI.html" class="btn-mas">Conocer más</a>
   </div>
 
   <div class="servicio-card">
@@ -77,8 +91,8 @@
         <div class="icono-container">
     <img src="/img/cerebro.png" alt="Icono Web" class="servicio-icono">
     </div>
-    <h3>Desarrollo Web</h3>
-    <p>Creamos sitios modernos, funcionales y rápidos que representan tu marca.</p>
+    <h3>Data Engineering</h3>
+    <p></p>
     <a href="#" class="btn-mas">Conocer más</a>
   </div>
 
@@ -220,6 +234,23 @@
   document.addEventListener("DOMContentLoaded", function () {
     const navbar = document.querySelector(".navbar");
     navbar.classList.add("transparent");
+  });
+</script>
+
+<script>
+  const hamburger = document.getElementById("hamburger");
+  const menu = document.querySelector(".menu");
+  const dropdownToggle = document.querySelector(".dropdown-toggle");
+  const dropdownMenu = document.querySelector(".dropdown-menu");
+
+  hamburger.addEventListener("click", () => {
+    menu.classList.toggle("active");
+  });
+
+  dropdownToggle.addEventListener("click", (e) => {
+    e.preventDefault(); // evita salto
+    dropdownToggle.classList.toggle("active");
+    dropdownMenu.classList.toggle("active");
   });
 </script>
 
