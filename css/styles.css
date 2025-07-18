@@ -1,4 +1,4 @@
-/* Reset básico */
+ Reset básico */
 * {
   margin: 0;
   padding: 0;
@@ -6,8 +6,8 @@
 }
 html {
   scroll-behavior: smooth;
-    overflow-x: hidden;
-}
+ }
+
 
 
 body {
@@ -63,10 +63,12 @@ body {
 
 .menu >a{
   color: white;
+  font-size: 1.5rem;
 }
 
 .menu>.dropdown >a{
   color: white;
+    font-size: 1.5rem;
 }
 
 /* Estilo al hacer scroll: fondo negro, texto blanco */
@@ -81,7 +83,7 @@ body {
 }
 .navbar.scrolled .menu >a,
 .navbar.scrolled .btn-cta {
-  color: white;
+    color: white;
   margin-top: 25px;
 }
 
@@ -210,15 +212,13 @@ body {
 /* Hero Section */
 .hero-video {
   position: relative;
-  width: 100;
+  width: 100vw;
   height: 100vh; /* Ocupa toda la altura del viewport */
   overflow: hidden;
 }
 
 .background-video {
   position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover; /* Llena el contenedor sin distorsión */
@@ -228,6 +228,7 @@ body {
 
 .hero-overlay {
   position: relative;
+  margin-top: 80px;
   z-index: 1;
   color: white;
   text-align: left; /* Alinea el texto a la izquierda */
@@ -240,7 +241,6 @@ body {
 .hero-container {
   max-width: 600px;
   text-align: left;
-
   margin-left: 150px;
   color: white;
 }
@@ -778,7 +778,11 @@ body {
 .navbar{
   height: 100px;
 }
-
+.navbar.scrolled .menu >a,
+.navbar.scrolled .btn-cta {
+    color: black;
+  margin-top: 25px;
+}
 .logo{
   margin-top:5px;
 }

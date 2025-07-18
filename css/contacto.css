@@ -1,21 +1,16 @@
-/* Reset básico */
+/* Navbar */
+/* Estilo base del navbar */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
-body {
-  font-family: 'Segoe UI', sans-serif;
-  color: #111;
-  background: #fff;
-}
-
-/* Navbar */
-/* Estilo base del navbar */
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+ }
 .navbar {
   position: fixed;
-  top: 0;
   width: 100%;
   z-index: 1000;
   height: 100px;
@@ -49,22 +44,30 @@ body {
 }
 
 .navbar.transparent .logo,
-.navbar.transparent .menu a,
+.navbar.transparent,
 .navbar.transparent .btn-cta {
+  color: white;
+  font-size: 1.5rem;
+}
+
+.menu >a{
+  color: white;
+}
+
+.menu>.dropdown >a{
   color: white;
 }
 
 /* Estilo al hacer scroll: fondo negro, texto blanco */
 .navbar.scrolled {
   background-color: #000;
-  color: white;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 .navbar.scrolled .logo{
   margin-top: 0px;
 }
-.navbar.scrolled .menu a,
+.navbar.scrolled .menu >a,
 .navbar.scrolled .btn-cta {
   color: white;
   margin-top: 25px;
@@ -120,6 +123,60 @@ body {
   color: rgb(241, 51, 51);
   transition: ease 0.5s;
 }
+/* 
+/* Estilos menus desplegables*/
+/* Estilos para dropdown */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-toggle {
+  cursor: pointer;
+  position: relative;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  max-width: 180px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+  flex-direction: column;
+}
+
+.dropdown-option{
+  color: #d72d2d;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 10px 0px;
+  text-decoration: none;
+  white-space: nowrap;
+  color: black !important; 
+    font-size: 16px;           /* ajusta según tu menú */
+  font-weight: 500;  
+  transition: background-color 0.3s;
+  border-bottom: 1px solid #ddd; /* línea sutil abajo */
+}
+
+.dropdown-menu a:last-child {
+  border-bottom: none; /* evita línea en el último ítem */
+}
+
+.dropdown-menu a:hover {
+  /* background-color: #f1f1f1; */
+  color: rgb(241, 51, 51);
+}
+
+/* Mostrar menú al hacer hover */
+.dropdown:hover .dropdown-menu {
+  display: block;
+} */
 
 .btn-cta {
   padding: 0.5rem 1.2rem;
@@ -188,26 +245,23 @@ body {
 /* Mostrar menú al hacer hover */
 .dropdown:hover .dropdown-menu {
   display: block;
-} */
+} 
 
 
 /* Hero Section */
 .hero-video {
   position: relative;
   width: 100%;
-  height: 70vh; /* Ocupa toda la altura del viewport */
   overflow: hidden;
+  z-index: -1;
 }
-
 
 .background-video {
   position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
-  height: 100%;
-  object-fit: cover; /* Llena el contenedor sin distorsión */
+  height: 100vh;
   z-index: -1;
+  object-fit: cover; /* Llena el contenedor sin distorsión */
 }
 
 
@@ -221,21 +275,21 @@ body {
   height: 100%;
 }
 .hero-container {
-  max-width: 1100px;
+  max-width: 1000px;
+  margin: 0 auto;
   text-align: center;
-  margin-left: 150px;
   color: white;
 }
 
 .hero-container h1 {
   font-size: 4rem;
-  margin-top: 70px;
-  margin-bottom: 1rem;
+  margin-top: 60px;
+  margin-bottom: 100px;
 }
 
 .hero-container p {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
+  font-size: 1.6rem;
+  margin-bottom: 3rem;
   color: white;
 }
 
@@ -244,17 +298,17 @@ body {
 .contact-section {
   background-color: #0a0a0a;
   color: white;
-  padding: 4rem 2rem;
+  width: 100%;
+  padding-top: 100px;
+  border-color: #ddd;
 }
 
 .contact-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 2rem;
   max-width: 900px;
   margin: auto;
-  margin-top: 30px;
 }
 
 .contact-image img {
@@ -273,7 +327,7 @@ body {
 }
 
 .contact-content h2 {
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   font-weight: bold;
   margin-bottom: 60px;
 }
@@ -283,10 +337,13 @@ body {
   border-radius: 12px;
   padding: 1.5rem;
   display: flex;
-  width: 400px;
+  width: 500px;
   flex-direction: column;
   justify-content: left;
-  gap: 1rem;
+  gap: 1.5rem;
+}
+.contact-item{
+  font-size: 3rem;
 }
 
 .contact-item {
@@ -391,5 +448,161 @@ body {
   color: #ff0033;
   margin-top: 2rem;
   margin-bottom: 30px;
+}
+
+@media screen and (max-width: 1024px) {
+/*Contact*/
+
+.contact-section {
+  padding-top: 100px;
+}
+
+.contact-container {
+  max-width: 90vh;
+}
+
+.contact-image img {
+  width: 320px;
+}
+.contact-box {
+  width: 350px;
+}
+  /* Footer */
+  .footer{
+    padding-top: 50px;
+  }
+  .footer-contacto,
+  .footer-main {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-servicios li {
+    width: auto;
+  }
+
+  .footer-copy {
+    text-align: center;
+  }
+}
+
+
+
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: white;
+}
+
+/* Estilos para responsive */
+@media screen and (max-width: 800px) {
+ .navbar,
+  .navbar.transparent {
+    background-color: #000 !important;
+  }
+
+.navbar{
+  height: 100px;
+}
+
+.logo{
+  margin-top:5px;
+}
+.navbar.scrolled .menu >a,
+.navbar.scrolled .btn-cta {
+    color: black;
+  margin-top: 25px;
+}
+  .hamburger {
+    display: block;
+  }
+
+ .menu {
+  display: none;
+  flex-direction: column;
+  background-color: #f9f9f9;
+  position: fixed;
+  top: 50px; /* asegúrate que tu navbar tenga height: 100px */
+  right: 0;
+  left: 0;  /* que ocupe todo el ancho */
+  width: 100%;
+  text-align: center;
+  padding: 1rem 0;
+  z-index: 999;
+}
+  .menu a {
+    margin: 1rem;
+    padding-bottom: 10px;
+    display: block;
+    color: #000;
+    border-bottom: 1px solid #eee;
+  }
+
+  .menu.active {
+    display: flex;
+  }
+
+  .dropdown-menu {
+    position: relative;
+    top: auto;
+    left: auto;
+    background-color: #111;
+  }
+
+  .dropdown:hover .dropdown-menu {
+    display: none; /* desactivamos hover */
+  }
+
+  .dropdown-toggle::after {
+    content: " ▼";
+  }
+  .dropdown > a{
+    color: #000;
+  }
+
+  .dropdown-toggle.active + .dropdown-menu {
+    display: block;
+  }
+
+  .dropdown-menu {
+  left: 0;
+  background-color: #f9f9f9;
+  max-width: 100%;
+}
+.dropdown-menu >a {
+     margin: 1rem;
+    padding-bottom: 10px;
+    display: block;
+    color: #000;
+    border-bottom: 1px solid #eee;
+}
+.menu>.dropdown >a{
+  color: black;
+}
+
+.contact-container{
+  display: flex;
+  flex-direction: column-reverse;
+}
+.contact-box{
+  margin-bottom: 20px;
+}
+
+}
+
+@media screen and (max-width: 700px) {
+.hero-container {
+    max-width: 80%;
+    margin:0 auto;
+
+  }
+    .hero-container h1{
+    margin-bottom: 25px;
+  }
+  .hero-container p{
+    margin-bottom: 25px;
+  }
 }
 

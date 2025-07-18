@@ -15,6 +15,9 @@
     <div class="logo">
       <a href="/"><img src="/img/Axm_converted.png" alt="logo"></a>
     </div>
+    <div class="hamburger" id="hamburger">
+  ☰
+</div>
     <nav class="menu">
       <a href="#">Inicio</a>
 
@@ -100,6 +103,23 @@ En nuestra consultora, diseñamos programas de formación orientados a desarroll
   document.addEventListener("DOMContentLoaded", function () {
     const navbar = document.querySelector(".navbar");
     navbar.classList.add("transparent");
+  });
+</script>
+
+<script>
+  const hamburger = document.getElementById("hamburger");
+  const menu = document.querySelector(".menu");
+  const dropdownToggle = document.querySelector(".dropdown-toggle");
+  const dropdownMenu = document.querySelector(".dropdown-menu");
+
+  hamburger.addEventListener("click", () => {
+    menu.classList.toggle("active");
+  });
+
+  dropdownToggle.addEventListener("click", (e) => {
+    e.preventDefault(); // evita salto
+    dropdownToggle.classList.toggle("active");
+    dropdownMenu.classList.toggle("active");
   });
 </script>
 
