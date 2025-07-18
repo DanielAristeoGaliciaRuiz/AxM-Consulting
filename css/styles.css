@@ -1,11 +1,14 @@
- Reset básico */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+body { margin: 0; }
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  margin: 0 auto;
  }
 
 
@@ -84,6 +87,7 @@ body {
 .navbar.scrolled .menu >a,
 .navbar.scrolled .btn-cta {
     color: white;
+    
   margin-top: 25px;
 }
 
@@ -294,10 +298,11 @@ body {
   color: #1B65E0;/* separa el título del grid */
   font-weight: 700;
 }
+
 .servicios-grid {
   display: grid;
  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
+  gap: 5rem;
   max-width: 1200px;
   margin: auto;
 }
@@ -312,7 +317,7 @@ body {
   box-shadow: 0 8px 24px rgba(0,0,0,0.15);
   overflow: hidden;
   transition: transform 0.3s ease;
-  height: 550px;
+  height: 450px;
   width: 100%;
   max-width: 380px; /* lo mantiene legible en desktop */
   margin: auto; 
@@ -855,6 +860,9 @@ body {
 }
 
 @media screen and (max-width: 700px) {
+  .hero-video{
+    width: ;
+  }
 .hero-container {
     max-width: 80%;
     margin:0 auto;
@@ -875,7 +883,7 @@ body {
   }
 
   .servicio-card {
-  height: 400px;
+  height: 500px;
   width: 100%;
 }
 
@@ -900,16 +908,21 @@ body {
   }
 
   /* Casos de éxito */
+  .casos-exito{
+        justify-content: center;
+  }
   .contenedor-caso {
     flex-direction: column;
     text-align: center;
     padding: 2rem;
-    width: 100%;
+    width: 90%;
+    margin: auto;
   }
 
   .imagen-caso img {
     width: 90%;
     max-width: 400px;
+
   }
 
   .texto-caso {
