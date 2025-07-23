@@ -55,6 +55,62 @@ html {
   margin-bottom: 10px;
 }
 
+.carrusel-container {
+  display: flex;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  margin-top: 2rem;
+  border-top: 1px solid #ddd;
+  padding-top: 2rem;
+  gap: 2rem;
+}
+
+.carrusel-item {
+  min-width: 100%;
+  padding: 1rem;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.carrusel-item h3 {
+  margin-bottom: 0.5rem;
+  color: grey;
+  font-size: 2rem;
+  justify-content: center;
+}
+
+.carrusel-item p {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.carrusel-controles {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.carrusel-controles button {
+  background-color: white;
+  color: grey;
+  border: solid;
+  padding: 0.5rem 1.2rem;
+  margin: 0 0.5rem;
+  border-radius: 50px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.carrusel-controles button:hover {
+  background-color: #d7d8dc;
+}
+
 
 
 /* Estilo al hacer scroll: fondo negro, texto blanco */

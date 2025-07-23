@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AxM Consulting</title>
-  <link rel="stylesheet" href="/css/cursos.css" />
+  <link rel="stylesheet" href="/css/nosotros.css" />
     <link rel="icon" href="/img/Axm_converted.png" type="image/png">
 </head>
 <body>
@@ -38,55 +38,55 @@
   </div>
 </header>
 
-  
 <div class="content-container">
-  <!-- Bloque de título separado -->
-        <div class="image">
-    
-   <h2>Consultoría de Datos y Analytics</h2>
-    <h3>Un flujo de trabajo eficiente para decisiones inteligentes</h3>
-<img src="../img/pexels-goumbik-669612.jpg" alt="Data Strategy">
+  <div class="image">
+    <img src="/img/pexels-goumbik-669612.jpg" alt="Data Strategy">
   </div>
 
-
-  <!-- Imagen a la izquierda -->
-
-
-  <!-- Texto a la derecha -->
   <div class="text">
-    <p>
-      Los datos por sí solos no bastan si no están organizados, validados y alineados con los objetivos del negocio.      
-      
-      En AxM, implementamos modelos de datos con un flujo de trabajo eficiente que actúa como columna vertebral de una empresa productiva. Diseñamos estructuras que optimizan cómo se recolecta, almacena, transforma y explota la información para que sea realmente útil y accionable.
-      <br><br>
-      A través de nuestro <b>modelo Data Flow</b>, fortalecemos tus procesos para convertir los datos en una ventaja operativa y estratégica.
-    </p>
+    <h2>Transformamos datos en decisiones que generan valor.</h2>
+    <!-- <p class="text-nosotros">
+      En AxM Consulting somos una firma mexicana especializada en asesoría estratégica basada en datos. Combinamos herramientas actuariales, estadísticas y analíticas con un profundo entendimiento del entorno económico y empresarial, para diseñar soluciones a la medida que impulsan la eficiencia, el crecimiento sostenible y la generación de valor en cada organización.
+    </p> -->
+
+    <!-- Carrusel de misión, visión, objetivo -->
+    <div class="carrusel-container" id="carrusel">
+<div class="carrusel-item">
+        <h3>Nosotros</h3>
+        <p>
+          En AxM Consulting somos una firma mexicana especializada en asesoría estratégica basada en datos. Combinamos herramientas actuariales, estadísticas y analíticas con un profundo entendimiento del entorno económico y empresarial, para diseñar soluciones a la medida que impulsan la eficiencia, el crecimiento sostenible y la generación de valor en cada organización.
+        </p>
+      </div>
+
+
+      <div class="carrusel-item">
+        <h3>Misión</h3>
+        <p>
+          Asesoramos a nuestros clientes en el análisis y aprovechamiento estratégico de los datos, generando soluciones basadas en ciencia actuarial que impulsan decisiones informadas y efectivas.
+        </p>
+      </div>
+      <div class="carrusel-item">
+        <h3>Visión</h3>
+        <p>
+          Ser una firma líder en consultoría actuarial y analítica, reconocida por su capacidad de transformar datos en valor y su impacto positivo en empresas e instituciones.
+        </p>
+      </div>
+      <div class="carrusel-item">
+        <h3>Objetivo</h3>
+        <p>
+          Ofrecer herramientas técnicas y soluciones prácticas que ayuden a nuestros clientes a enfrentar desafíos con inteligencia de datos, promoviendo el desarrollo sostenible y el crecimiento estratégico.
+        </p>
+      </div>
+    </div>
+
+    <div class="carrusel-controles">
+      <button onclick="moverCarrusel(-1)">←</button>
+      <button onclick="moverCarrusel(1)">→</button>
+    </div>
   </div>
 </div>
 
-<section class="seccion-oscura">
-  <div class="seccion-container">
-    <h2>¿Qué incluye nuestra consultoría?</h2>
-    <ul>
-      <li><strong>Validación y revisión de la calidad de los datos,</strong> asegurando su disponibilidad, integridad y seguridad.</li>
-      <li><strong>Resguardo en la nube</strong> para garantizar accesibilidad y protección.</li>
-      <li><strong>Automatización de reportes periódicos </strong> con actualización sin intervención manual.</li>
-      <li><strong>Conexión directa entre fuentes y herramientas de trabajo </strong> como Power BI, Excel o sistemas internos.</li>
-      <li><strong>Diseño de arquitectura de datos</strong> que facilita análisis y control.</li>
-    </ul>
-  </div>
-
-<section class="seccion-clara">
-  <div class="seccion-container">
-    <h2>Beneficios Tangibles:</h2>
-    <ul>
-      <li><strong>Mayor rentabilidad operativa </strong> y cumplimiento de metas</li>
-      <li><strong>Menor tiempo en generación de reportes.</strong></li>
-      <li><strong>Reducción de errores</strong> y procesos manuales innecesarios.</li>
-      <li><strong>Equipos autosuficientes</strong> con acceso a datos útiles en tiempo real.</li>
-    </ul>
-  </div>
-</section>
+  
 
 
 <footer class="footer">
@@ -115,6 +115,7 @@
   </div>
   </div>
 </footer>
+
 
 
 
@@ -154,6 +155,24 @@
     dropdownMenu.classList.toggle("active");
   });
 </script>
+<script>
+  let index = 0;
+
+  function moverCarrusel(direccion) {
+    const carrusel = document.getElementById('carrusel');
+    const items = carrusel.querySelectorAll('.carrusel-item');
+    const ancho = items[0].offsetWidth + 32; // considera padding/margin
+
+    // Actualiza el índice circularmente
+    index = (index + direccion + items.length) % items.length;
+
+    carrusel.scrollTo({
+      left: index * ancho,
+      behavior: 'smooth'
+    });
+  }
+</script>
+
 
 </body>
 </html>

@@ -13,7 +13,7 @@
  <header class="navbar">
   <div class="navbar-container">
     <div class="logo">
-      <a href="/"><img src="/img/Axm_converted.png" alt="logo"></a>
+      <a href="/"><img src="/img/Axm_converted.svg" alt="logo" class="AxmLogo"></a>
     </div>
     <div class="hamburger" id="hamburger">
   ☰
@@ -32,7 +32,7 @@
         </div>
       </div>
 
-      <a href="#">Nosotros</a>
+      <a href="/nosotros.html">Nosotros</a>
       <a href="/contacto.html">Contacto</a>
     </nav>
   </div>
@@ -42,15 +42,15 @@
   <section class="hero-video">
   <!-- Video de fondo -->
   <video autoplay muted loop playsinline class="background-video">
-    <source src="/animation/3141210-uhd_3840_2160_25fps.mp4" type="video/mp4">
+    <source src="/animation/3141210-uhd_3840_2160_25fps.mp4" type="video/mp4" class="fade-in-element">
     Tu navegador no soporta video HTML5.
   </video>
 
   <!-- Contenido encima del video -->
   <div class="hero-overlay">
     <div class="hero-container">
-    <h1>AxM Consulting Services, transformamos datos en decisiones inteligentes</h1>
-    <p>Potenciamos el valor de tus datos con soluciones que impulsan decisiones estratégicas y resultados medibles.</p>
+    <h1 class="fade-in-element" >AxM Consulting Services, transformamos datos en decisiones inteligentes</h1>
+    <p class="fade-in-element">Potenciamos el valor de tus datos con soluciones que impulsan decisiones estratégicas y resultados medibles.</p>
     <a href="#" class="btn-primary">Conoce más</a>
   </div>
   </div>
@@ -59,7 +59,7 @@
 <section class="servicios-section">
     <h2>Nuestros Servicios</h2>
 
-  <div class="servicios-grid">
+  <div class="servicios-grid fade-in-on-scroll">
   <div class="servicio-card">
         <div class="icono-container">
     <img src="/img/ensenar.png" alt="Icono Web" class="servicio-icono">
@@ -107,7 +107,7 @@
     <p>Usando las mejores herramientas para análisis de datos</p>
   </div>
 
-  <div class="metricas-grid">
+  <div class="metricas-grid fade-in-on-scroll" >
 
     <div class="metrica-wrapper">
   <div class="metrica-fondo"></div>
@@ -236,6 +236,33 @@
     dropdownMenu.classList.toggle("active");
   });
 </script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const elementos = document.querySelectorAll('.fade-in-element');
+    elementos.forEach(el => {
+      setTimeout(() => {
+        el.classList.add('visible');
+      }, 100); // Delay opcional
+    });
+  });
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const elementos = document.querySelectorAll('.fade-in-on-scroll');
 
+    const observer = new IntersectionObserver((entradas) => {
+      entradas.forEach(entrada => {
+        if (entrada.isIntersecting) {
+          entrada.target.classList.add('visible');
+          observer.unobserve(entrada.target); // Detener la observación si solo quieres que aparezca una vez
+        }
+      });
+    }, {
+      threshold: 0.1 // Se activa cuando al menos el 10% del elemento está visible
+    });
+
+    elementos.forEach(el => observer.observe(el));
+  });
+</script>
 </body>
 </html>
