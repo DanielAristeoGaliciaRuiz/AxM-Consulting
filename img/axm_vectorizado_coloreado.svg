@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<svg baseProfile="full" height="600px" version="1.1" width="600px" xmlns="http://www.w3.org/2000/svg" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><style type="text/css"><![CDATA[
+    .logo-negro { fill: #000000; }
+    .logo-rojo { fill: #d62828; }
+]]></style></defs><path class="logo-negro" d="M 0,0 L 0,599 L 599,599 L 599,0 Z" /><path class="logo-rojo" d="M 228,207 L 226,209 L 226,210 L 223,213 L 222,212 L 222,213 L 221,214 L 221,222 L 222,223 L 223,223 L 226,226 L 226,227 L 227,228 L 230,228 L 231,227 L 369,227 L 370,228 L 371,227 L 372,228 L 372,227 L 373,226 L 374,227 L 374,228 L 374,227 L 375,226 L 377,226 L 377,225 L 378,224 L 378,221 L 380,219 L 380,216 L 379,216 L 378,215 L 379,214 L 378,214 L 377,213 L 378,212 L 377,211 L 377,210 L 376,209 L 375,209 L 374,208 L 373,208 L 372,207 L 371,207 L 371,208 L 370,209 L 369,208 L 231,208 L 230,207 Z" /></svg>
