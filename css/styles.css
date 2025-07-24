@@ -388,8 +388,8 @@ a {
   padding: 1rem;
   text-decoration: none;
   font-weight: bold;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
   transition: bottom 0.3s ease;
 }
 
@@ -512,8 +512,8 @@ a {
 .casos-exito {
   background-color: #0c0c0c;
   padding: 6rem 2rem;
-    border-style: solid;
-    border-color: white;
+  margin: 0;
+    
    
 }
 
@@ -601,6 +601,29 @@ a {
 .clientes-logos img:hover {
   transform: scale(1.1);
 }
+
+.social-fixed-buttons {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  z-index: 999;
+  padding: 0.5rem;
+}
+
+.social-fixed-buttons a img {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s ease;
+}
+
+.social-fixed-buttons a:hover img {
+  transform: scale(1.1);
+}
+
 
 /*Contacto*/
 
