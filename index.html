@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AxM-Consulting</title>
   <link rel="stylesheet" href="css/styles.css" />
-    <link rel="icon" href="/img/Axm_converted" type="image/png">
+    <link rel="icon" href="/img/Axm_converted.svg" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -54,7 +54,7 @@
     <div class="hero-container">
     <h1 class="fade-in-element" >AxM Consulting Services, transformamos datos en decisiones inteligentes</h1>
     <p class="fade-in-element">Potenciamos el valor de tus datos con soluciones que impulsan decisiones estratégicas y resultados medibles.</p>
-    <a href="#" class="btn-primary">Conoce más</a>
+    <a href="/nosotros.html" target="_blank" class="btn-primary">Conoce más</a>
   </div>
   </div>
 </section>
@@ -116,30 +116,30 @@
   <div class="metrica-fondo"></div>
   <div class="metrica-card">
     <div class="icono-metrica">
-      <img src="icons/experiencia.svg" alt="Experiencia">
+      <img src="/img/people.png" alt="Experiencia">
     </div>
-    <h3>+15</h3>
-    <p>Años de Experiencia en Data</p>
+    <h3 class="contador" data-target="15">+0</h3>
+    <p>Más de 15 cursos y capacitaciones</p>
   </div>
 </div>
 <div class="metrica-wrapper">
   <div class="metrica-fondo"></div>
   <div class="metrica-card">
     <div class="icono-metrica">
-      <img src="icons/experiencia.svg" alt="Experiencia">
+      <img src="/img/people.png" alt="Experiencia">
     </div>
-    <h3>+15</h3>
-    <p>Años de Experiencia en Data</p>
+    <h3 class="contador" data-target="20000">+0 </h3>
+    <p>Más de 20000 seguidores en Instagram.</p>
   </div>
 </div>
 <div class="metrica-wrapper">
   <div class="metrica-fondo"></div>
   <div class="metrica-card">
     <div class="icono-metrica">
-      <img src="icons/experiencia.svg" alt="Experiencia">
+      <img src="/img/people.png" alt="Experiencia">
     </div>
-    <h3>+15</h3>
-    <p>Años de Experiencia en Data</p>
+    <h3 class="contador" data-target="1000">+0</h3>
+    <p>Más de 1000 alumnos capacitados</p>
   </div>
 </div>
   </div>
@@ -261,6 +261,38 @@
     elementos.forEach(el => observer.observe(el));
   });
 </script>
+
+<script>
+  const counters = document.querySelectorAll('.contador');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        const target = parseInt(el.getAttribute('data-target'));
+        let count = 0;
+        const duration = 1000; // duración total (ms)
+        const step = Math.ceil(target / (duration / 50));
+
+        const updateCount = () => {
+          count += step;
+          if (count < target) {
+            el.textContent = '+' + count;
+            requestAnimationFrame(updateCount);
+          } else {
+            el.textContent = '+' + target;
+          }
+        };
+
+        updateCount();
+        observer.unobserve(el); // evita repetir animación
+      }
+    });
+  }, { threshold: 0.6 });
+
+  counters.forEach(counter => observer.observe(counter));
+</script>
+
 <div class="social-fixed-buttons">
   <a href="https://wa.me/525620352090" target="_blank" class="whatsapp" aria-label="WhatsApp">
     <img src="/img/whatsapp.png" alt="WhatsApp">
